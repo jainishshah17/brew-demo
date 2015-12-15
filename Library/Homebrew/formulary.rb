@@ -34,7 +34,6 @@ class Formulary
     namespace = "FormulaNamespace#{Digest::MD5.hexdigest(path.to_s)}"
     klass = load_formula(name, path, contents, namespace)
     FORMULAE[path] = klass
-    # puts "***** Path is #{path} ----->"
   end
 
   if IO.method_defined?(:set_encoding)

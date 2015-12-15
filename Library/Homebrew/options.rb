@@ -7,7 +7,6 @@ class Option
     @name = name
     @flag = "--#{name}"
     @description = description
-    #puts "Flag is------>#{@flag}"
   end
 
   def to_s

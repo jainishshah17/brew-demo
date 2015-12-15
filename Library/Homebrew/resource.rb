@@ -51,7 +51,6 @@ class Resource
 
 
   def downloader
-    puts "download name is ------#{download_name}"
     download_strategy.new(download_name, Download.new(self))
   end
 

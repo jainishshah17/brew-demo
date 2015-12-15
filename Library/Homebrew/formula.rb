@@ -1701,7 +1701,6 @@ class Formula
     # <pre>bottle :disable, "reasons"</pre>
     def bottle(*args, &block)
       stable.bottle(*args, &block)
-      # puts "#{stable.bottle(*args, &block)}  ------->>>>>stable.bottle(*args, &block)"
     end
 
     # @private

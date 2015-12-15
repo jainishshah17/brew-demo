@@ -266,14 +266,10 @@ class CurlDownloadStrategy < AbstractFileDownloadStrategy
   end
 
   def fetch
-    puts "url 0000 is --------> #{@url}"
 
     if ARGV.force_domain?
-      puts "------->>>>>#{ARGV.force_domain?}"
       if !@url.include? ENV["HOMEBREW_BOTTLE_DOMAIN"]
-        puts "/#{Bintray.repository(tap)} is tap....."
         @url = @url.sub(/^(https?:\/\/)?/, ENV["HOMEBREW_BOTTLE_DOMAIN"]+"/#{Bintray.repository(tap)}/")
-        puts "url is --------> #{@url}"
         end
     end
     ohai "Downloading #{@url}"

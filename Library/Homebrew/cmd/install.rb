@@ -47,7 +47,6 @@ module Homebrew
 
       ARGV.formulae.each do |f|
 
-        puts "Formula  is  --------> #{f}"
         # head-only without --HEAD is an error
         if !ARGV.build_head? && f.stable.nil? && f.devel.nil?
           raise <<-EOS.undent
@@ -96,9 +95,7 @@ module Homebrew
 
       perform_preinstall_checks
 
-      formulae.each { |f| install_formula(f)
-      # puts "Formula  is 444444 --------> #{f}"
-      }
+      formulae.each { |f| install_formula(f)}
     rescue FormulaUnavailableError => e
       if (blacklist = blacklisted?(e.name))
         ofail "#{e.message}\n#{blacklist}"
@@ -206,7 +203,6 @@ module Homebrew
   def install_formula(f)
     f.print_tap_action
 
-    puts "installingggggggggggg"
     fi = FormulaInstaller.new(f)
     fi.options             = f.build.used_options
     fi.ignore_deps         = ARGV.ignore_deps?

@@ -75,8 +75,6 @@ class FormulaInstaller
 
   def pour_bottle?(install_bottle_options = { :warn=>false })
     return true if Homebrew::Hooks::Bottles.formula_has_bottle?(formula)
-    puts "Formula name is -----> #{formula}"
-    puts "Formula has bottle? #{Homebrew::Hooks::Bottles.formula_has_bottle?(formula)}"
     return false if @pour_failed
 
     bottle = formula.bottle
@@ -431,7 +429,6 @@ class FormulaInstaller
 
   def caveats
     return if only_deps?
-    puts "helllooooooo  #{audit_installed}"
 
     audit_installed if ARGV.homebrew_developer? && !formula.keg_only?
 
