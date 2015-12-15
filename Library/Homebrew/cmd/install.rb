@@ -97,7 +97,7 @@ module Homebrew
       perform_preinstall_checks
 
       formulae.each { |f| install_formula(f)
-      puts "Formula  is 444444 --------> #{f}"
+      # puts "Formula  is 444444 --------> #{f}"
       }
     rescue FormulaUnavailableError => e
       if (blacklist = blacklisted?(e.name))

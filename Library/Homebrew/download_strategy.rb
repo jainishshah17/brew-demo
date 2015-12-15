@@ -256,6 +256,7 @@ end
 
 class CurlDownloadStrategy < AbstractFileDownloadStrategy
   attr_reader :mirrors, :tarball_path, :temporary_path
+  attr_accessor :tap
 
   def initialize(name, resource)
     super
@@ -270,10 +271,7 @@ class CurlDownloadStrategy < AbstractFileDownloadStrategy
     if ARGV.force_domain?
       puts "------->>>>>#{ARGV.force_domain?}"
       if !@url.include? ENV["HOMEBREW_BOTTLE_DOMAIN"]
-        def tap
-
-        end
-        puts "/#{Bintray.repository(tap)}"
+        puts "/#{Bintray.repository(tap)} is tap....."
         @url = @url.sub(/^(https?:\/\/)?/, ENV["HOMEBREW_BOTTLE_DOMAIN"]+"/#{Bintray.repository(tap)}/")
         puts "url is --------> #{@url}"
         end

@@ -87,7 +87,7 @@ class SoftwareSpec
   def bottle(disable_type = nil, disable_reason = nil,  &block)
     if disable_type
       @bottle_disable_reason = BottleDisableReason.new(disable_type, disable_reason)
-      puts "bottle disable reason is #{@bottle_disable_reason}"
+      # puts "bottle disable reason is #{@bottle_disable_reason}"
     else
       bottle_specification.instance_eval(&block)
     end
@@ -278,7 +278,7 @@ class Bottle
   private
 
   def build_url(root_url, filename)
-    puts "download url is *************#{root_url}/#{filename}}"
+    puts "download url is *************#{root_url}/#{filename}"
     "#{root_url}/#{filename}"
   end
 end

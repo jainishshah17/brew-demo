@@ -86,7 +86,7 @@ begin
   cmd = nil
 
   ARGV.dup.each_with_index do |arg, i|
-    puts "Argument is >>>>>>>>#{arg}"
+    # puts "Argument is >>>>>>>>#{arg}"
     if help_flag && cmd
       break
     elsif arg =~ help_regex
@@ -98,7 +98,7 @@ begin
 
   cmd = HOMEBREW_INTERNAL_COMMAND_ALIASES.fetch(cmd, cmd)
 
-  puts "Command is ------>>#{cmd}"
+  # puts "Command is ------>>#{cmd}"
   sudo_check = %w[ install reinstall postinstall link pin unpin
                    update upgrade create migrate tap switch ]
 
